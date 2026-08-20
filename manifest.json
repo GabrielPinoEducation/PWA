@@ -1,6 +1,6 @@
 {
     "name": "Notas por Dictado de Voz",
-    "short_name": "NotasVoz",
+    "short_name": "Diario Personal",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#f4f4f9",
@@ -8,7 +8,7 @@
     "description": "App educativa para tomar notas con la voz.",
     "icons": [
         {
-            "src": "https://cdn-icons-png.flaticon.com/512/3177/3177440.png",
+            "src": "/workspaces/PWA/sonido-de-onda.png",
             "sizes": "512x512",
             "type": "image/png"
         }
