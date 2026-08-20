@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas por Voz</title>
+    
+    <!-- Enlace al Manifest para que sea instalable (PWA) -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Color del tema para la barra del navegador -->
+    <meta name="theme-color" content="#4CAF50">
+</head>
+<body>
+    <header>
+        <h1>🎤 Notas por Voz</h1>
+    </header>
+    
+    <main>
+        <div class="controls">
+            <button id="btn-dictar" class="btn primary">Iniciar Dictado</button>
+            <button id="btn-guardar" class="btn secondary" disabled>Guardar Nota</button>
+        </div>
+
+        <p id="estado">Presiona "Iniciar Dictado" y comienza a hablar.</p>
+        
+        <!-- Aquí se mostrará el texto mientras hablamos -->
+        <textarea id="texto-actual" placeholder="Tu texto aparecerá aquí..." rows="4" readonly></textarea>
+
+        <h2>Tus Notas Guardadas</h2>
+        <ul id="lista-notas"></ul>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        // API: Service Worker
+        // Registramos el Service Worker para permitir el funcionamiento offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker registrado con éxito.'))
+                .catch(err => console.error('Error al registrar el Service Worker:', err));
+        }
+    </script>
+</body>
+</html>
